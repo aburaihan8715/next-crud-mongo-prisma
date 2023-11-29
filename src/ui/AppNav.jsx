@@ -8,7 +8,7 @@ export default function AppNav() {
           <div>
             NE<span className="text-2xl text-red-700">X</span>T CRUD
           </div>
-          <div className="text-xs">mongodb prisma</div>
+          <div className="text-xs">mongo prisma</div>
         </Link>
         <Link href={"/addTopic"} className="bg-white c-btn">
           Add topic

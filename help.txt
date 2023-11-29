@@ -1,0 +1,7 @@
+
+
+// ==========references===========
+1.  cheat sheet
+https://github.com/emanuelefavero/prisma
+2.   tutorials
+https://www.youtube.com/watch?v=KvesFlTVCaI&t=2906s 
