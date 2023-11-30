@@ -1,7 +1,18 @@
-
-
 // ==========references===========
 1.  cheat sheet
 https://github.com/emanuelefavero/prisma
 2.   tutorials
 https://www.youtube.com/watch?v=KvesFlTVCaI&t=2906s 
+
+// technologies used
+1.  Next js
+2.  prisma
+3.  mongodb
+
+
+// completed tasks
+1.  CRUD operations
+
+// pending tasks
+1.  deploy somewhere
+2.  use modal for create new topic
