@@ -2,15 +2,8 @@ import DeleteTopicBtn from "@/components/topic/DeleteTopicBtn";
 import Link from "next/link";
 
 async function getTopicsData() {
-  const res = await fetch("http://localhost:3000/api/topics");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
+  const res = await fetch("http://localhost:3000/api/topics", { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch data");
   return res.json();
 }
 
@@ -28,8 +21,8 @@ export default async function Home() {
               <p className="capitalize">{topic.description}</p>
             </div>
             <div className="flex gap-2 items-start">
-              <DeleteTopicBtn />
-              <Link href="/editTopic">
+              <DeleteTopicBtn id={topic.id} />
+              <Link href={`/editTopic/${topic.id}`}>
                 <button className="c-btn bg-green-500 text-white">edit</button>
               </Link>
             </div>

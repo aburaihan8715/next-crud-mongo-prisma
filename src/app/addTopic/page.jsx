@@ -1,14 +1,37 @@
 "use client";
-export default function AddTopic() {
-  const submitHandler = (e) => {
-    e.preventDefault();
 
+import { useRouter } from "next/navigation";
+
+export default function AddTopic() {
+  const router = useRouter();
+  const submitHandler = async (e) => {
+    e.preventDefault();
     const title = e.target[0].value;
     const description = e.target[1].value;
 
     if (!title || !description) return alert("Title and description can not be an empty!");
+
     const newTopic = { title, description };
-    console.log(newTopic);
+
+    try {
+      const res = await fetch("http://localhost:3000/api/topics", {
+        method: "POST",
+        body: JSON.stringify(newTopic),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await res.json();
+      if (data.success) {
+        // show notification
+        alert("Topic created successfully!");
+        // redirect somewhere or reset the fields
+        router.push("/");
+        router.refresh();
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <div className="max-w-md mx-auto">
