@@ -22,9 +22,6 @@ export default async function Home() {
             </div>
             <div className="flex gap-2 items-start">
               <DeleteTopicBtn id={topic.id} />
-              {/* <Link href={`/editTopic/${topic.id}`}>
-                <button className="c-btn bg-green-500 text-white">edit</button>
-              </Link> */}
               <EditTopicBtn topic={topic} />
             </div>
           </li>

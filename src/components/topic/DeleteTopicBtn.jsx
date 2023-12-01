@@ -16,7 +16,6 @@ export default function DeleteTopicBtn({ id }) {
           alert("Topic deleted successfully!");
           router.refresh();
         }
-        console.log(data);
       } catch (error) {
         console.log(error.message);
       }
