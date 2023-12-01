@@ -1,5 +1,5 @@
 import DeleteTopicBtn from "@/components/topic/DeleteTopicBtn";
-import Link from "next/link";
+import EditTopicBtn from "@/components/topic/EditTopicBtn";
 
 async function getTopicsData() {
   const res = await fetch("http://localhost:3000/api/topics", { cache: "no-store" });
@@ -22,9 +22,10 @@ export default async function Home() {
             </div>
             <div className="flex gap-2 items-start">
               <DeleteTopicBtn id={topic.id} />
-              <Link href={`/editTopic/${topic.id}`}>
+              {/* <Link href={`/editTopic/${topic.id}`}>
                 <button className="c-btn bg-green-500 text-white">edit</button>
-              </Link>
+              </Link> */}
+              <EditTopicBtn topic={topic} />
             </div>
           </li>
         ))}
