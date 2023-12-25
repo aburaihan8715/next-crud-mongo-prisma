@@ -17,7 +17,7 @@ export async function POST(request) {
       data: { title, description },
     });
 
-    // TODO: if we fetched data based on our information then we should use the following guard otherwise not need like get all topics
+    // TODO: if we fetched data based on our information then we should use the following guard otherwise not need, like get all topics
     if (!newTopic) return NextResponse.json({ success: false, message: "Topic is  found" }, { status: 404 });
 
     return NextResponse.json({ success: true, message: "Topic created successfully!", data: newTopic }, { status: 201 });
